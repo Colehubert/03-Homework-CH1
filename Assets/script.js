@@ -83,16 +83,27 @@ function generatePassword(){
   var hasSpecialCharacters = confirm("Include Special Characters");
   var hasUpperCharacters = confirm("Include UpperCase Characters");
   var hasLowerCharacters = confirm("Include LowerCase Characters");
-  var hasNumbersCharacters = confirm("Include Numbers");
+  var hasNumbers = confirm("Include Numbers");
 
   var passwordSettings ={
     passwordLength: passwordLength,
     hasSpecialCharacters: hasSpecialCharacters,
     hasUpperCharacters: hasUpperCharacters,
     hasLowerCharacters: hasLowerCharacters,
-    hasNumbersCharacters: hasNumbersCharacters
+    hasNumbers: hasNumbers
   }
- 
+
+  var result = [];
+  var requiredCharacters =[];
+
+  function selectRandomCharacter(array){
+    Math.floor(Math.random())
+
+  }
+ if(hasSpecialCharacters){
+result.push(selectRandomCharacter(specialCharacters));
+requiredCharacters.concat(specialCharacters);
+ }
 }
 var generateBtn = document.querySelector("#generate");
 
