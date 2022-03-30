@@ -108,7 +108,7 @@ if(passwordOptions.hasUpperCharacters){
   result.push(selectRandomCharacter(Uppercase));
   requiredCharacters.concat(Uppercase);
 
-if(password.passwordOptions.hasLowerCharacters){
+if(passwordOptions.hasLowerCharacters){
     result.push(selectRandomCharacter(Lowercase));
     requiredCharacters.concat(Lowercase);
 
@@ -118,6 +118,12 @@ if(password.passwordOptions.hasLowerCharacters){
       
 
  }
+for(var i = 0; i <( passwordOptions.passwordlength - result.length); i++){
+ var randomCharacter = selectRandomCharacter (requiredCharacters); 
+ result.push(randomCharacter);
+}
+console.log(result);
+
 }
 var generateBtn = document.querySelector("#generate");
 
