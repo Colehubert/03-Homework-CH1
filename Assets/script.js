@@ -97,12 +97,26 @@ function generatePassword(){
   var requiredCharacters =[];
 
   function selectRandomCharacter(array){
-    Math.floor(Math.random())
+   return array  [Math.floor(Math.random() * array.length)];
 
   }
- if(hasSpecialCharacters){
+ if(passwordOptions.hasSpecialCharacters){
 result.push(selectRandomCharacter(specialCharacters));
 requiredCharacters.concat(specialCharacters);
+
+if(passwordOptions.hasUpperCharacters){
+  result.push(selectRandomCharacter(Uppercase));
+  requiredCharacters.concat(Uppercase);
+
+if(password.passwordOptions.hasLowerCharacters){
+    result.push(selectRandomCharacter(Lowercase));
+    requiredCharacters.concat(Lowercase);
+
+    if(passwordOptions.hasNumbers){
+      result.push(selectRandomCharacter(numbers));
+      requiredCharacters.concat(numbers);
+      
+
  }
 }
 var generateBtn = document.querySelector("#generate");
@@ -116,5 +130,6 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
+{generateBtn.addEventListener("click", writePassword);
+}
