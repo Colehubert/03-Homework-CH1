@@ -78,23 +78,22 @@ var upperCase = [
 "Z",
 ];
 
+function generatePassword(){
+  var passwordLength = prompt("What Length of the password would you like?");
+  var hasSpecialCharacters = confirm("Include Special Characters");
+  var hasUpperCharacters = confirm("Include UpperCase Characters");
+  var hasLowerCharacters = confirm("Include LowerCase Characters");
+  var hasNumbersCharacters = confirm("Include Numbers");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  var passwordSettings ={
+    passwordLength: passwordLength,
+    hasSpecialCharacters: hasSpecialCharacters,
+    hasUpperCharacters: hasUpperCharacters,
+    hasLowerCharacters: hasLowerCharacters,
+    hasNumbersCharacters: hasNumbersCharacters
+  }
+ 
+}
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
