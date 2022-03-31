@@ -79,7 +79,7 @@ var upperCase = [
 ];
 
 function generatePassword(){
-  var passwordLength = prompt("What Length of the password would you like?");
+  var passwordLength = parseInt(prompt("What Length of the password would you like?"),10);
   var hasSpecialCharacters = confirm("Include Special Characters");
   var hasUpperCharacters = confirm("Include UpperCase Characters");
   var hasLowerCharacters = confirm("Include LowerCase Characters");
@@ -98,33 +98,36 @@ function generatePassword(){
 
   function selectRandomCharacter(array){
    return array  [Math.floor(Math.random() * array.length)];
-
+   
   }
- if(passwordOptions.hasSpecialCharacters){
+ 
+ if(passwordSettings.hasSpecialCharacters){
 result.push(selectRandomCharacter(specialCharacters));
-requiredCharacters.concat(specialCharacters);
+requiredCharacters.concat(specialCharacters);}
 
-if(passwordOptions.hasUpperCharacters){
-  result.push(selectRandomCharacter(Uppercase));
-  requiredCharacters.concat(Uppercase);
+if(passwordSettings.hasupperCharacters){
+  result.push(selectRandomCharacter(uppercase));
+  requiredCharacters.concat(uppercase);}
 
-if(passwordOptions.hasLowerCharacters){
-    result.push(selectRandomCharacter(Lowercase));
-    requiredCharacters.concat(Lowercase);
+if(passwordSettings.haslowerCharacters){
+    result.push(selectRandomCharacter(lowercase));
+    requiredCharacters.concat(lowercase);}
 
-    if(passwordOptions.hasNumbers){
+    if(passwordSettings.hasNumbers){
       result.push(selectRandomCharacter(numbers));
-      requiredCharacters.concat(numbers);
+      requiredCharacters.concat(numbers);}
       
 
  }
-for(var i = 0; i <( passwordOptions.passwordlength - result.length); i++){
+ var password = generatePassword() 
+ console.log(password)
+for(var i = 0; i < password.length;  i++){
  var randomCharacter = selectRandomCharacter (requiredCharacters); 
  result.push(randomCharacter);
 }
-console.log(result);
+console.log(result);''
 
-}
+
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
@@ -136,6 +139,5 @@ function writePassword() {
 
 }
 
+generateBtn.addEventListener("click", writePassword);
 
-{generateBtn.addEventListener("click", writePassword);
-}
